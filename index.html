@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Career Opportunity | Audit & Risk</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #102a43;
+      color: white;
+      padding: 18px 30px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .nav-right {
+      font-size: 13px;
+      color: #d9e6ef;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background: linear-gradient(135deg, #102a43, #176b87);
+      color: white;
+      padding: 65px 20px 100px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.22);
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 45px;
+      line-height: 1.15;
+      max-width: 800px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 18px;
+      color: #dcecf5;
+    }
+
+    /* =========================
+       JOB SUMMARY
+    ========================== */
+
+    .container {
+      max-width: 1100px;
+      margin: -55px auto 60px;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .job-summary {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      box-shadow: 0 8px 30px rgba(20,40,70,.10);
+      border: 1px solid #e4eaf0;
+    }
+
+    .summary-item {
+      border-right: 1px solid #e5eaf0;
+    }
+
+    .summary-item:last-child {
+      border-right: none;
+    }
+
+    .summary-label {
+      color: #718096;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 5px;
+    }
+
+    .summary-value {
+      font-weight: 700;
+      color: #183b56;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 30px;
+      border: 1px solid #e4eaf0;
+      box-shadow: 0 5px 20px rgba(20,40,70,.05);
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #102a43;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    h3 {
+      color: #183b56;
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: #68778d;
+    }
+
+    /* =========================
+       LIST
+    ========================== */
+
+    ul {
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    /* =========================
+       HIGHLIGHT
+    ========================== */
+
+    .highlight {
+      background: #eef8fb;
+      border-left: 4px solid #1597a5;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .salary {
+      font-size: 24px;
+      font-weight: 700;
+      color: #176b87;
+      margin: 10px 0;
+    }
+
+    /* =========================
+       APPLY CARD
+    ========================== */
+
+    .apply-card {
+      position: sticky;
+      top: 20px;
+    }
+
+    .apply-card h2 {
+      font-size: 22px;
+    }
+
+    .apply-btn {
+      width: 100%;
+      border: none;
+      padding: 14px;
+      background: linear-gradient(135deg, #176b87, #1597a5);
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      margin-top: 15px;
+    }
+
+    .apply-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(23,107,135,.25);
+    }
+
+    .small-note {
+      font-size: 12px;
+      color: #7b8794;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* =========================
+       FORM
+    ========================== */
+
+    #application {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn .3s ease;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+      margin-top: 15px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #ccd6e0;
+      border-radius: 7px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #1597a5;
+      box-shadow: 0 0 0 3px rgba(21,151,165,.10);
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 7px;
+      background: #102a43;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* =========================
+       EDUCATIONAL RESULT
+    ========================== */
+
+    #result {
+      display: none;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 10px;
+      background: #fff4f2;
+      border: 1px solid #f0c7c0;
+      color: #5f2520;
+    }
+
+    .result-title {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .result-list {
+      margin-top: 12px;
+    }
+
+    /* =========================
+       DISCLAIMER
+    ========================== */
+
+    .educational {
+      background: #fff8e6;
+      border: 1px solid #f0dfaa;
+      color: #66531a;
+      padding: 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      color: #7b8794;
+      font-size: 13px;
+    }
+
+    .author {
+      margin-top: 7px;
+      font-weight: 700;
+      color: #176b87;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .job-summary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .summary-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .apply-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .job-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-item {
+        border-right: none;
+        border-bottom: 1px solid #e5eaf0;
+        padding-bottom: 12px;
+      }
+
+      .summary-item:last-child {
+        border-bottom: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      Career Opportunities
+    </div>
+
+    <div class="nav-right">
+      Professional Opportunities · USA
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      Featured Opportunity
+    </div>
+
+    <h1>
+      Senior Audit & Risk Consultant
+    </h1>
+
+    <p>
+      Join a growing consulting team supporting organizations
+      across Texas with audit, risk management, governance
+      and compliance initiatives.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================== -->
+
+<main class="container">
+
+
+  <!-- JOB SUMMARY -->
+
+  <section class="job-summary">
+
+    <div class="summary-item">
+
+      <div class="summary-label">
+        Location
+      </div>
+
+      <div class="summary-value">
+        Texas, USA
+      </div>
+
+    </div>
+
+
+    <div class="summary-item">
+
+      <div class="summary-label">
+        Employment
+      </div>
+
+      <div class="summary-value">
+        Full-time
+      </div>
+
+    </div>
+
+
+    <div class="summary-item">
+
+      <div class="summary-label">
+        Experience
+      </div>
+
+      <div class="summary-value">
+        5+ years
+      </div>
+
+    </div>
+
+
+    <div class="summary-item">
+
+      <div class="summary-label">
+        Compensation
+      </div>
+
+      <div class="summary-value">
+        $105k – $135k
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTENT -->
+
+  <div class="content-grid">
+
+
+    <!-- LEFT COLUMN -->
+
+    <div>
+
+
+      <div class="card">
+
+        <h2>
+          About the opportunity
+        </h2>
+
+        <p class="muted">
+
+          We are looking for experienced professionals
+          interested in Audit, Risk, Governance and Compliance
+          to support a growing portfolio of clients across
+          the United States.
+
+        </p>
+
+        <div class="highlight">
+
+          <strong>
+            Why this role?
+          </strong>
+
+          <br>
+
+          Work with cross-functional teams, assess business
+          processes, identify risks and contribute to
+          strategic improvement initiatives.
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <h2>
+          Responsibilities
+        </h2>
+
+        <ul>
+
+          <li>
+            Perform risk and control assessments.
+          </li>
+
+          <li>
+            Support internal and external audit activities.
+          </li>
+
+          <li>
+            Identify control weaknesses and recommend improvements.
+          </li>
+
+          <li>
+            Prepare audit documentation and management reports.
+          </li>
+
+          <li>
+            Work with stakeholders across multiple business areas.
+          </li>
+
+          <li>
+            Contribute to governance and compliance initiatives.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="card">
+
+        <h2>
+          Requirements
+        </h2>
+
+        <ul>
+
+          <li>
+            5+ years of professional experience in Audit,
+            Risk, Compliance or related fields.
+          </li>
+
+          <li>
+            Strong analytical and communication skills.
+          </li>
+
+          <li>
+            Experience working with business stakeholders.
+          </li>
+
+          <li>
+            Ability to work independently and as part of a team.
+          </li>
+
+          <li>
+            Relevant professional certification is a plus.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="card">
+
+        <h2>
+          Compensation & Benefits
+        </h2>
+
+        <div class="salary">
+          $105,000 – $135,000
+        </div>
+
+        <p class="muted">
+          Annual base salary · Depending on experience
+        </p>
+
+        <ul>
+
+          <li>Health and wellness benefits</li>
+          <li>401(k) retirement plan</li>
+          <li>Professional development</li>
+          <li>Flexible working arrangements</li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- RIGHT COLUMN -->
+
+    <aside>
+
+      <div class="card apply-card">
+
+        <h2>
+          Interested?
+        </h2>
+
+        <p class="muted">
+          Submit a quick application to express your interest
+          in this opportunity.
+        </p>
+
+        <button
+          class="apply-btn"
+          onclick="showApplication()">
+          Apply for this position
+        </button>
+
+        <div class="small-note">
+          Application takes approximately 2 minutes.
+        </div>
+
+
+        <!-- APPLICATION FORM -->
+
+        <div id="application">
+
+          <hr style="margin:25px 0; border:none; border-top:1px solid #e5eaf0;">
+
+          <h3>
+            Candidate Information
+          </h3>
+
+          <p class="muted" style="font-size:13px;">
+            Complete the fields below to continue.
+          </p>
+
+
+          <form onsubmit="submitApplication(event)">
+
+            <label for="name">
+              Full name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              placeholder="Your name"
+              autocomplete="off"
+              required>
+
+
+            <label for="email">
+              Email address
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="name@example.com"
+              autocomplete="off"
+              required>
+
+
+            <label for="experience">
+              Years of experience
+            </label>
+
+            <select id="experience">
+
+              <option value="">
+                Select
+              </option>
+
+              <option>
+                1–3 years
+              </option>
+
+              <option>
+                3–5 years
+              </option>
+
+              <option>
+                5–10 years
+              </option>
+
+              <option>
+                10+ years
+              </option>
+
+            </select>
+
+
+            <label for="interest">
+              Area of interest
+            </label>
+
+            <select id="interest">
+
+              <option>
+                Audit
+              </option>
+
+              <option>
+                Risk Management
+              </option>
+
+              <option>
+                Compliance
+              </option>
+
+              <option>
+                Governance
+              </option>
+
+            </select>
+
+
+            <button
+              type="submit"
+              class="submit-btn">
+              Continue
+            </button>
+
+          </form>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div id="result">
+
+          <div class="result-title">
+            🛡️ Security Awareness Test
+          </div>
+
+          <p>
+
+            This was a simulated phishing awareness
+            scenario.
+
+          </p>
+
+          <ul class="result-list">
+
+            <li>
+              No information was submitted to a server.
+            </li>
+
+            <li>
+              No password or sensitive information was requested.
+            </li>
+
+            <li>
+              The form exists only for educational simulation.
+            </li>
+
+          </ul>
+
+          <p style="margin-top:15px;">
+
+            <strong>
+              The important lesson:
+            </strong>
+
+            always verify the sender, domain and legitimacy
+            of a job offer before submitting personal information.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK CHECK -->
+
+      <div class="card">
+
+        <h3>
+          Before applying
+        </h3>
+
+        <p class="muted" style="font-size:14px;">
+
+          Always verify the company, recruiter,
+          email domain and official careers website
+          before submitting personal information.
+
+        </p>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- EDUCATIONAL NOTICE -->
+
+  <div class="educational">
+
+    <strong>Security Awareness Notice</strong>
+
+    <br><br>
+
+    This webpage is part of an educational cybersecurity
+    awareness project. The employment opportunity presented
+    above is fictional. The application form does not transmit,
+    store or collect the information entered by the user.
+
+  </div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <div>
+    Security Awareness Project
+  </div>
+
+  <div class="author">
+    By Igor
+  </div>
+
+</footer>
+
+
+<script>
+
+function showApplication() {
+
+  const application = document.getElementById("application");
+
+  application.style.display = "block";
+
+  application.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+}
+
+
+function submitApplication(event) {
+
+  event.preventDefault();
+
+  /*
+    IMPORTANT:
+    Nothing is sent to a server.
+    The form is intentionally local-only.
+  */
+
+  const form = event.target;
+
+  form.style.display = "none";
+
+  const result = document.getElementById("result");
+
+  result.style.display = "block";
+
+  result.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+}
+
+</script>
+
+</body>
+</html>
